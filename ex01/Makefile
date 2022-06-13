@@ -2,26 +2,42 @@ NAME	:=	phonebook
 
 STDF	:=	-std=c++98
 
-CC	:=	c++;
+CC	:=	c++
 CPPF	:=	-Wall -Wextra -Werror $(STDF)
 
-SRCS	:=	phonebook.cpp
-OBJS	:=	$(SRCS:.cpp=.o)
-INCS	:=	phonebook.hpp
+DIR_SRCS	:=	sources
+DIR_INCS	:=	includes
+DIR_OBJS	:=	.objs
+
+LST_SRCS	:=	PhoneBook.class.cpp \
+				Contact.class.cpp \
+				main.cpp
+
+LST_INCS	:=	PhoneBook.class.hpp \
+				Contact.class.hpp
+
+LST_OBJS	:=	$(LST_SRCS:.cpp=.o)
+
+SRCS	:=	$(addprefix $(DIR_SRCS)/,$(LST_SRCS))
+INCS	:=	$(addprefix $(DIR_INCS)/,$(LST_INCS))
+OBJS	:=	$(addprefix $(DIR_OBJS)/,$(LST_OBJS))
 
 all	:	$(NAME)
 
 $(NAME)	:	$(OBJS)
-		$(CC) $(CPPF) $^ -o $@
+			$(CC) $(CPPF) $^ -o $@
 
-$(OBJS	:	$(SRCS) $(INCS) Makefile
-		$(CC) $(CPPF) -I $(INCS) -c $< -o $@
+$(DIR_OBJS)/%.o	:	$(DIR_SRCS)/%.cpp $(INCS) Makefile | $(DIR_OBJS)
+					$(CC) $(CPPF) -I $(DIR_INCS) -c $< -o $@
+
+$(DIR_OBJS)	:
+				mkdir -p $@
 
 clean	:
-		rm -rf $(OBJS)
+			rm -rf $(OBJS)
 
 fclean	:	clean
-		rm -rf $(NAME)
+			rm -rf $(NAME)
 
 re	:
 		$(MAKE) fclean
