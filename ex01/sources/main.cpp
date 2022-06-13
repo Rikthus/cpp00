@@ -10,7 +10,7 @@ int	main()
 
 	while (1)
 	{
-		std::cin >> user_cmd;
+		std::getline(std::cin, user_cmd);
 		if (user_cmd == "ADD")
 			phonebook.add_contact();
 		else if (user_cmd == "EXIT")

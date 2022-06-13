@@ -17,7 +17,6 @@ class	PhoneBook
 		~PhoneBook();
 
 		void	add_contact(void);
-		void	validate_new_contact(void);
 		void	seach_contact(void) const;
 
 };
