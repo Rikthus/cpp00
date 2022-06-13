@@ -39,7 +39,14 @@ bool	Contact::valid_info(void)	const
 	return (true);
 }
 
+void	Contact::print_info(void)	const
+{
+	int	i;
+}
+
+///////////////////////////
 //////////GETTERS//////////
+///////////////////////////
 
 std::string	Contact::get_first_name(void)	const
 {
@@ -66,7 +73,9 @@ std::string Contact::get_darkest_secret(void)	const
 	return (this->_darkest_secret);
 }
 
+///////////////////////////
 //////////SETTERS//////////
+///////////////////////////
 
 void	Contact::set_first_name(std::string arg)
 {

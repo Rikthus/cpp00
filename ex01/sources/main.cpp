@@ -13,6 +13,8 @@ int	main()
 		std::getline(std::cin, user_cmd);
 		if (user_cmd == "ADD")
 			phonebook.add_contact();
+		else if (user_cmd == "SEARCH")
+			phonebook.search_contact();
 		else if (user_cmd == "EXIT")
 			break;
 		else

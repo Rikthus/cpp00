@@ -34,3 +34,17 @@ void	PhoneBook::add_contact(void)
 		this->_tmp_contact->set_darkest_secret("\0");
 	}
 }
+
+void	PhoneBook::search_contact(void)	const
+{
+	int	search_index = 0;
+
+	while (search_index < 8)
+	{
+	std::cout << search_index;
+	std::cout << setw(9) << "|";
+	std::cout << setw(10) << "|";
+	std::cout << setw(10) << "|";
+	search_index++;
+	}
+}

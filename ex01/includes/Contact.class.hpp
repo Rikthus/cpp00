@@ -19,7 +19,8 @@ class	Contact
 		~Contact();
 
 		void		set_info(void);
-		bool		valid_info(void)		const;
+		bool		valid_info(void)			const;
+		void		print_info(void)			const;
 
 		std::string	get_first_name(void)		const;
 		std::string	get_last_name(void)			const;
