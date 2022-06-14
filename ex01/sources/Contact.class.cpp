@@ -2,7 +2,7 @@
 #include <string>
 #include "Contact.class.hpp"
 
-Contact::Contact() : _first_name("\0"), _last_name("\0"), _nickname("\0"), _phone_number("\0"), _darkest_secret("\0")
+Contact::Contact() : _first_name("NA"), _last_name("NA"), _nickname("NA"), _phone_number("NA"), _darkest_secret("NA")
 {
 }
 
@@ -37,11 +37,6 @@ bool	Contact::valid_info(void)	const
 	if (this->_darkest_secret.empty())
 		return (false);
 	return (true);
-}
-
-void	Contact::print_info(void)	const
-{
-	int	i;
 }
 
 ///////////////////////////
